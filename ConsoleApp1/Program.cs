@@ -19,8 +19,16 @@ Console.WriteLine("Hello, World!");
 
 ProductManagers productManagers = new ProductManagers(new EfProductDal());
 
-foreach(var p in productManagers.GetProductDetails())
+var result = productManagers.GetProductDetails();
+if(result.Success==true)
 {
-    Console.WriteLine(p.ProductName + " / "+ p.CategoryName);
+	foreach (var product in result.Data)
+	{
+        Console.WriteLine(product.ProductName + "=>" + product.ProductId + "=>" + product.CategoryName); ;
+    }
+}
+else
+{
+    Console.WriteLine(result.Message);
 }
 
