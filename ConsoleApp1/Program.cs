@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Business.Concrete;
+using ConsoleApp1.Deneme;
+using ConsoleApp1.Deneme.Concrete;
 using DataAccess.Concrete.EntityFramework;
 
 Console.WriteLine("Hello, World!");
@@ -32,3 +34,11 @@ else
     Console.WriteLine(result.Message);
 }
 
+Console.WriteLine("*/*/*/*/*/*/*/*/");
+
+var customer = new Customer { Id = 1, Name = "mustafa", LastName = "yılmaz", Adress = "hacı bayram mah." };
+var employee = new Employee { Id = 2, Name = "İşçi ", LastName = "kardeş" };
+
+PersonManager personManager = new PersonManager();
+personManager.Add(customer);
+personManager.Add(employee);
