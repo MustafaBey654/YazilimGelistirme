@@ -19,7 +19,7 @@ Console.WriteLine("Hello, World!");
 //    Console.WriteLine(c.CategoryName,c.CategoryId);
 //}
 
-ProductManagers productManagers = new ProductManagers(new EfProductDal());
+ProductManagers productManagers = new ProductManagers(new EfProductDal(),new CategoryManager(new EfCategoryDal()));
 
 var result = productManagers.GetProductDetails();
 if(result.Success==true)
